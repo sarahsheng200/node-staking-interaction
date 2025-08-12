@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true, // TypeORM 必需
+    "experimentalDecorators": true, // TypeORM 必需
+    // 路径别名核心配置
+    "baseUrl": ".", // 基础路径（从项目根目录开始）
+    "paths": {
+      "@app/*": ["app/*"], // 映射 app 目录（框架核心）
+      "@src/*": ["src/*"], // 映射 src 目录（业务代码）
+      "@modules/*": ["src/modules/*"], // 业务模块快捷别名
+      "@config/*": ["src/config/*"], // 业务模块快捷别名
+      "@stake/*": ["src/modules/stake/*"], // 业务模块快捷别名
+      "@services/*": ["src/services/*"], // 数据库相关快捷别名
+      "@database/*": ["src/database/*"] // 数据库相关快捷别名
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'"
+  },
+  "include": ["app/**/*", "src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
