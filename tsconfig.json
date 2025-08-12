@@ -19,6 +19,7 @@
       "@modules/*": ["src/modules/*"], // 业务模块快捷别名
       "@config/*": ["src/config/*"], // 业务模块快捷别名
       "@stake/*": ["src/modules/stake/*"], // 业务模块快捷别名
+      "@withdraw/*": ["src/modules/withdraw/*"], // 业务模块快捷别名
       "@services/*": ["src/services/*"], // 数据库相关快捷别名
       "@database/*": ["src/database/*"] // 数据库相关快捷别名
     }
