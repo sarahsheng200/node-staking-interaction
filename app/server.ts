@@ -17,6 +17,16 @@ app.use("/api", routes);
 //TODO: error handler
 // app.use(errorHandler)
 
-app.listen(config.port, () => {
-  console.log(`Example app listening on port ${config.port}`);
-});
+export const startServer = async (): Promise<void> => {
+  return new Promise((resolve) => {
+    app.listen(config.port, () => {
+      console.log(`Example app listening on port ${config.port}`);
+    });
+    resolve();
+  });
+};
+
+// 如果直接运行server.ts，仍可正常启动
+if (require.main === module) {
+  startServer();
+}

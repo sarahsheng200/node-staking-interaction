@@ -21,7 +21,8 @@
       "@stake/*": ["src/modules/stake/*"], // 业务模块快捷别名
       "@withdraw/*": ["src/modules/withdraw/*"], // 业务模块快捷别名
       "@services/*": ["src/services/*"], // 数据库相关快捷别名
-      "@database/*": ["src/database/*"] // 数据库相关快捷别名
+      "@database/*": ["src/database/*"], // 数据库相关快捷别名
+      "@entities/*": ["src/entities/*"] // 数据库相关快捷别名
     }
   },
   "scripts": {
@@ -31,6 +32,6 @@
     "lint": "eslint 'src/**/*.{js,ts}'",
     "format": "prettier --write 'src/**/*.{js,ts}'"
   },
-  "include": ["app/**/*", "src/**/*"],
+  "include": ["app/**/*", "src/**/*", "index.ts"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }

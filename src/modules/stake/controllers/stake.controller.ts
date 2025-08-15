@@ -12,7 +12,7 @@ export class StakeController {
       }
 
       const stake = await this.service.stake(param.amount, param.period);
-
+      console.log("-------------stake", stake);
       if (stake?.hash) {
         return res.status(200).json({ data: stake });
       } else {

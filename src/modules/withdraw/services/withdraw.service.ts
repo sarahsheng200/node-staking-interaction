@@ -1,4 +1,4 @@
-import { StakingContract } from "@services/staking-contract";
+import { StakingContract } from "@src/services/contract.service";
 
 export class WithdrawService {
   private contract: StakingContract;
@@ -10,11 +10,11 @@ export class WithdrawService {
     try {
       const value = BigInt(index);
       const tx = await this.contract.stakingContract.withdraw(value);
+      await tx.wait();
       return {
         hash: tx.hash,
         contractAddress: tx.to,
         fromAddress: tx.from,
-        gasUsed: Number(tx.gasLimit),
         method: "withdraw",
       };
     } catch (err) {
